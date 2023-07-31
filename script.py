@@ -4,8 +4,11 @@ x = sp.Symbol("x")
 y = sp.Symbol("y")
 
 # Definir la función que se desea aproximar
-def funcion(x, y):
+def funcion1(x, y):
     return e**(-x**2-y**2)
+
+def funcion2(x,y):
+    return x*e**y
 
 #Aproximacion por serie de Taylor
 class AproximacionTaylor:
@@ -19,7 +22,7 @@ class AproximacionTaylor:
         return str(self.funcion)
     
     #Metodo para aproximar la funcion en un punto
-    def aproximar(self, grado, x0, y0):
+    def aproximar(self, funcion, grado, x0, y0):
         aproximacion = funcion(x0,y0)
         
         #derivadas mediante el uso de sp.diff
