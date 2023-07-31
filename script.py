@@ -33,3 +33,36 @@ class AproximacionTaylor:
             aproximacion +=  (df_dx * (self.x - x0) + df_dy * (self.y - y0)) / sp.factorial(i)
         
         return aproximacion
+
+#Prueba del codigo
+print("- Aproximacion de funciones multivariables -\n".center(75))
+
+#Analisis para la primer funcion
+print(f"*- Se aproximara la funcion ' {str(funcion1(x,y))} ' en el punto (0,0): ")
+funcion_act1 = sp.sympify(funcion1(x,y)) #Se utiliza sympify para que la libreria trabaje respetando variables
+aproximacion1 = AproximacionTaylor(funcion_act1)
+
+#Evaluo las aproximaciones de grado 1, 2 y 3 en el punnto (0,0)
+funcion1_eval1 = aproximacion1.aproximar(funcion1, 1, 0, 0)
+funcion1_eval2 = aproximacion1.aproximar(funcion1, 2, 0, 0)
+funcion1_eval3 = aproximacion1.aproximar(funcion1, 3, 0, 0)
+
+#Muestro en pantalla
+print(f"Aproximacion de grado 1: {funcion1_eval1}")
+print(f"Aproximacion de grado 2: {funcion1_eval2}")
+print(f"Aproximacion de grado 3: {funcion1_eval3}")
+
+#Analisis para la segunda funcion
+print(f"\n*- Se aproximara la funcion ' {str(funcion2(x,y))} ' en el punto (1,0): ")
+funcion_act2 = sp.sympify(funcion2(x,y)) #Se utiliza sympify para que la libreria trabaje respetando variables
+aproximacion2 = AproximacionTaylor(funcion_act2)
+
+#Evaluo las aproximaciones de grado 1, 2 y 3 en el punnto (0,0)
+funcion2_eval1 = aproximacion2.aproximar(funcion2, 1, 1, 0)
+funcion2_eval2 = aproximacion2.aproximar(funcion2, 2, 1, 0)
+funcion2_eval3 = aproximacion2.aproximar(funcion2, 3, 1, 0)
+
+#Muestro en pantalla
+print(f"Aproximacion de grado 1: {funcion2_eval1}")
+print(f"Aproximacion de grado 2: {funcion2_eval2}")
+print(f"Aproximacion de grado 3: {funcion2_eval3}")
