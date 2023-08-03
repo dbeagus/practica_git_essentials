@@ -1,13 +1,14 @@
 import math
 
 def producto_escalar(v1, v2):
-
-    ''' 
-    Calculo del producto escalar entre dos vectores
     
-    '''
-    
-    return 
+    resultado = 0
+    if len(v1) == len(v2):
+        for i in range(len(v1)):
+            resultado += v1[i] * v2[i]
+        return resultado
+    else:
+        return False
 
 def son_ortogonales(v1, v2):
     
@@ -40,9 +41,8 @@ if __name__ == '__main__':
     # 1 # Escribir una función que reciba dos vectores y devuelva su producto escalar.
     vector1 = [1, 2, 3]
     vector2 = [4, 5, 6]
-    resultado = producto_escalar(vector1, vector2)
-    print(resultado)
-
+    escalar = producto_escalar(vector1, vector2)
+    print(f"El producto escalar entre los dos vectores es: {escalar}")
 
     # 2 # Escribir una función que reciba dos vectores y devuelva si son o no ortogonales.
     vector1 = [1, 0, 0]
