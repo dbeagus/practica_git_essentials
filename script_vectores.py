@@ -36,12 +36,9 @@ else:
 # Basicamente buscamos multiplos entre cada componente del vector 
 
 def calcular_norma(vector):
-    
-    '''
-    Calcular la norma de un vector
-    '''
-
-    return 
+    suma_cuadrados = sum(v ** 2 for v in vector)
+    norma = math.sqrt(suma_cuadrados)
+    return norma
 
 
 if __name__ == '__main__': 
