@@ -20,12 +20,20 @@ def son_ortogonales(v1, v2):
     return
 
 def son_paralelos(v1, v2):
+    # Verificar si los vectores son proporcionales por comparación de proporciones
+    ratios = [v1[i] / v2[i] for i in range(len(v1))]
+    return all(ratio == ratios[0] for ratio in ratios)
 
-    '''
-    Verificar si dos vectores dados son paralelos 
-    '''
-    
-    return 
+# Ejemplo de uso
+v1 = [8, 4, 6]
+v2 = [4, 2, 3]
+
+if son_paralelos(v1, v2):
+    print("Los vectores son paralelos.")
+else:
+    print("Los vectores no son paralelos.")
+
+# Basicamente buscamos multiplos entre cada componente del vector 
 
 def calcular_norma(vector):
     
